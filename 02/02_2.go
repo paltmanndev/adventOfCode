@@ -7,8 +7,11 @@ import (
 	"strings"
 )
 
-func partTow() {
+func partTwo() {
 	content, err := ioutil.ReadFile("input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
 	const X = 1
 	const Y = 2
 	const Z = 3
@@ -16,9 +19,7 @@ func partTow() {
 	const lost = 0
 	const draw = 3
 	punkte_ges := 0
-	if err != nil {
-		log.Fatal(err)
-	}
+
 	str := strings.Split(string(content), "\n")
 	//fmt.Println(len(str))
 	for i := 0; i < len(str); i++ {
