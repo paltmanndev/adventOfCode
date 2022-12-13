@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func partOne() {
+func partTwo() {
 	content, err := ioutil.ReadFile("input.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -29,21 +29,11 @@ func partOne() {
 			//fmt.Println(str)
 		}
 		//fmt.Println(numArray)
-		if (numArray[0] <= numArray[2] && numArray[1] >= numArray[3]) || (numArray[2] <= numArray[0] && numArray[3] >= numArray[1]) {
+		if (numArray[1] >= numArray[2]) && (numArray[3] >= numArray[0]) {
 			//fmt.Printf("Punkt\n")
 			erg++
 
 		}
-
-		//fmt.Printf("I = %d, num = %s, str = %s\n", i, str)
-		//fmt.Println(str[i+1])
-		/*for i := 0; i < len(str); i++ {
-			str := strings.Split(str[i], "-")
-			fmt.Printf("I = %d, str = %s\n", i, str)
-			numArray[i], _ = strconv.Atoi(str[0])
-			numArray[i+1], _ = strconv.Atoi(str[1])
-			fmt.Println(numArray)
-		}*/
 	}
 	fmt.Println(erg)
 }
